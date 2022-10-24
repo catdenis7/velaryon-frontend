@@ -1,6 +1,6 @@
 import logo from '../../logo.svg';
 import '../../assets/css/style.css';
-import Harry from '../../components/Harry/Harry';
+import Harry from '../../components/Harry';
 
 export default function Home() {
     return (

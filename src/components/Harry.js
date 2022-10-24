@@ -1,4 +1,4 @@
-import harryPic from '../../assets/images/harry.jpg';
+import harryPic from '../assets/images/harry.jpg';
 // EJEMPLO DE COMPONENTE
 export default function Patito () {
   return (

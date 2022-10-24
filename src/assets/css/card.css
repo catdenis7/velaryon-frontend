@@ -1,0 +1,22 @@
+.dummy-display {
+    display: flex;
+}
+
+.card-name {
+    text-align: left;
+}
+
+.icon-card {
+    margin-right: 20px;
+    color: #406e73;
+}
+
+.img-card {
+    width: 150px;
+    display: flex;
+}
+
+.button-icon {
+    color: #406e73;
+    display: flex;
+}

@@ -1,0 +1,65 @@
+/* SIDEBAR CSS */
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.sidebar-main-container {
+  display: flex;
+}
+
+main {
+  width: 100%;
+  padding: 20px;
+}
+
+.sidebar-container {
+  background-color: #406e73;
+  color: #eeeeee;
+  height: 100vh;
+  width: 250px;
+}
+
+.sidebar-top-section {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
+}
+
+.sidebar-logo {
+  font-size: 25px;
+  color: #eeeeee;
+  margin: 0;
+}
+
+.sidebar-bars {
+  display: flex;
+  font-size: 30px;
+  color: #eeeeee;
+  margin-left: 20px;
+}
+.sidebar-link {
+  display: flex;
+  color: #eeeeee;
+  padding: 10px 15px;
+  gap: 15px;
+  transition: all 0.5s;
+}
+
+.link:hover {
+  background: #eeeeee;
+  color: #406e73;
+  transition: all 0.5s;
+}
+
+/* .active {
+  background: #eeeeee;
+  color: #406e73;
+} */
+
+.sidebar-icon,
+.sidebar-link_text {
+  font-size: 30px;
+}
