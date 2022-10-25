@@ -28,4 +28,7 @@
     display: flex;
 }
 
+.card-margin{
+    margin: 10px
+}
 /* CLIENT CARDS */
