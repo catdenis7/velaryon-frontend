@@ -1,7 +1,7 @@
 import React from "react";
 import "../assets/css/column.css";
-import ProspectCard from "./ProspectCard";
-import Card from "./ProspectCard";
+import ProspectCard from '../components/cards/ProspectCard'
+import ContactCard from "./cards/ContactCard";
 export default function() {
 
     return (
@@ -11,13 +11,7 @@ export default function() {
             </div>
             <div className="body-column" style={{backgroundColor: "#86a1ac"}}>
                 <ProspectCard></ProspectCard><br></br>
-                <ProspectCard></ProspectCard><br></br>
-                <ProspectCard></ProspectCard><br></br>
-                <ProspectCard></ProspectCard><br></br>
-                <ProspectCard></ProspectCard><br></br>
-                <ProspectCard></ProspectCard><br></br>
-                <ProspectCard></ProspectCard><br></br>
-                <ProspectCard></ProspectCard><br></br>
+                <ContactCard></ContactCard><br></br>
             </div>
         </div>
     );

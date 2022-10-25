@@ -7,10 +7,10 @@ import "/node_modules/bootstrap/dist/css/bootstrap.css";
 import "./assets/css/custom.css";
 
 import Dashboard from "./components/Dashboard";
-import ProspectCard from "./components/ProspectCard";
-import ContactCard from "./components/ContactCard";
-import ClientCard from "./components/ClientCard";
-import FrecuentCard from "./components/FrecuentCard";
+import ProspectCard from "./components/cards/ProspectCard";
+import ContactCard from "./components/cards/ContactCard";
+// import ClientCard from "./components/cards/ClientCard";
+// import FrecuentCard from "./components/cards/FrecuentCard";
 import Contact from "./components/Contact";
 import Client from "./components/Client";
 import Frecuent from "./components/Frecuent";
@@ -26,8 +26,6 @@ function App() {
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/prospectCard" element={<ProspectCard />} />
           <Route path="/contactCard" element={<ContactCard />} />
-          <Route path="/clientCard" element={<ClientCard />} />
-          <Route path="/frecuentCard" element={<FrecuentCard />} />
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/client" element={<Client/>}/>
           <Route path="/frecuent" element={<Frecuent/>}/>

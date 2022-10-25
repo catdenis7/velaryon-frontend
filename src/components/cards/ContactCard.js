@@ -1,5 +1,5 @@
 import React from "react";
-import capibaraPic from "../assets/images/Capibara formal-modified.png";
+import capibaraPic from "../../assets/images/Capibara formal-modified.png";
 import {
     BsFillTelephoneFill,
     BsLink45Deg,
@@ -8,8 +8,8 @@ import {
 } from "react-icons/bs";
 import { HiMail } from "react-icons/hi";
 import { MdExposurePlus1 } from "react-icons/md";
-import PersonalData from "./cards/PersonalData";
-import ProspectFooter from "./cards/footers/ProspectFooter";
+import PersonalData from "./PersonalData";
+import ContactFooter from "./footers/ContactFooter";
 // import "../assets/css/cards.css";
 
 export default function() {
@@ -17,7 +17,7 @@ export default function() {
         <div className="card card-margin">
             <div className="card-footer">
                 <PersonalData></PersonalData>
-                <ProspectFooter></ProspectFooter>
+                <ContactFooter></ContactFooter>
             </div>
         </div>
     );
