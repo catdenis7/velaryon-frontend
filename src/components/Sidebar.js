@@ -19,7 +19,7 @@ export default function ({ children }) {
       icon: <BsFillPersonFill />,
     },
     {
-      path: "/Card",
+      path: "/ProspectCard",
       name: "Card",
       icon: <TbVinyl/>
     }

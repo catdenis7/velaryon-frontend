@@ -4,6 +4,7 @@
 
 .card-name {
     text-align: left;
+    size: 1px;
 }
 
 .icon-card {
@@ -12,7 +13,7 @@
 }
 
 .img-card {
-    width: 150px;
+    width: 2%;
     display: flex;
 }
 
@@ -20,3 +21,11 @@
     color: #406e73;
     display: flex;
 }
+
+/* CONTACT CARDS */
+
+.detail-button {
+    display: flex;
+}
+
+/* CLIENT CARDS */

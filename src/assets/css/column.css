@@ -19,7 +19,7 @@
 .column-name {
     padding-top: 20px;
     font-size: 25px;
-    color: #2C3639;
+    color: #434846;
     font-weight: 700;
 }
 
@@ -28,4 +28,5 @@
     height: 100vh;
     border-radius: 0px 0px 25px 25px;
     box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.4);
+    color: #86a1ac;
 }
