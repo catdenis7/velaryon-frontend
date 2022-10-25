@@ -13,16 +13,16 @@ export default function ({ children }) {
       name: "Home",
       icon: <BsFillHouseFill />,
     },
-    {
-      path: "/Login",
-      name: "Login",
-      icon: <BsFillPersonFill />,
-    },
-    {
-      path: "/ProspectCard",
-      name: "Card",
-      icon: <TbVinyl/>
-    }
+    // {
+    //   path: "/Login",
+    //   name: "Login",
+    //   icon: <BsFillPersonFill />,
+    // },
+    // {
+    //   path: "/ProspectCard",
+    //   name: "Card",
+    //   icon: <TbVinyl/>
+    // }
   ];
   return (
     <div className="sidebar-main-container">

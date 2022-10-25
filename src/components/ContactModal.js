@@ -2,17 +2,14 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-export default function Example(props) {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+export default function Example({props, show, handleClose}) {
+ 
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      {/* <Button variant="primary" onClick={handleShow}>
         Launch demo modal
-      </Button>
+      </Button> */}
 
       <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered show={show} onHide={handleClose}>
         <Modal.Header closeButton>

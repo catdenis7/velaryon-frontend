@@ -15,17 +15,18 @@ import Contact from "./components/Contact";
 import Client from "./components/Client";
 import Frecuent from "./components/Frecuent";
 import ContactModal from "./components/ContactModal";
+import DashboardPage from "./pages/DashboardPage";
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/sidebar" element={<Sidebar />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/prospectCard" element={<ProspectCard />} />
-          <Route path="/contactCard" element={<ContactCard />} />
+          <Route index element={<Login />} />
+          {/* <Route path="/login" element={<Login />} /> */}
+          {/* <Route path="/sidebar" element={<Sidebar />} /> */}
+          <Route path="/dashboard" element={<DashboardPage />} />
+          {/* <Route path="/prospectCard" element={<ProspectCard />} /> */}
+          {/* <Route path="/contactCard" element={<ContactCard />} /> */}
           <Route path="/contact" element={<Contact/>}/>
           <Route path="/client" element={<Client/>}/>
           <Route path="/frecuent" element={<Frecuent/>}/>

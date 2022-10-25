@@ -1,6 +1,6 @@
 import React from "react";
 import "../assets/css/login.css";
-import logo from "../assets/images/harry.jpg";
+import logo from "../assets/images/velaryon logo.png";
 export default function (props) {
   return (
     <div className="login-main-container">
