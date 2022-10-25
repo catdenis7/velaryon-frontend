@@ -12,12 +12,14 @@ import PersonalData from "./PersonalData";
 import ProspectFooter from "./footers/ProspectFooter";
 // import "../assets/css/cards.css";
 
-export default function() {
+export default function(props) {
+    console.log("Prospect Card" + JSON.stringify(props.props))
     return (
         <div className="card card-margin">
             <div className="card-footer">
-                <PersonalData></PersonalData>
-                <ProspectFooter></ProspectFooter>
+                <PersonalData props={props.props}></PersonalData>
+                <ProspectFooter props={props.props}>
+                </ProspectFooter>
             </div>
         </div>
     );

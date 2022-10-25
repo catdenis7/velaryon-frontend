@@ -12,6 +12,7 @@ import { MdExposurePlus1 } from "react-icons/md";
 
 
 export default function(props) {
+    let data = props.props;
     return (
         <div className="row align-items-center" style={{ display: 'flex' }}>
             <div style={{display : 'flex'}}>
@@ -27,17 +28,17 @@ export default function(props) {
                             fontWeight: "800",
                         }}
                     >
-                        <small>Mauricio Sauza Torrez</small>
+                        <small>{data.facebookName}</small>
                     </span>
                     <br></br>
                     <BsFillTelephoneFill style={{ marginRight: 5 }} color={"#406e73"} />
-                    <small style={{ color: 'black' }}>73883886</small>
+                    <small style={{ color: 'black' }}>{data.phone ?? 'N/A'}</small>
                     <br></br>
                     <HiMail color={"#406e73"} style={{ marginRight: 5 }} />
-                    <small style={{ color: 'black' }}>mauricio@gmail.com</small>
+                    <small style={{ color: 'black' }}>{data.email ?? 'N/A'}</small>
                     <br></br>
                     <BsLink45Deg color={"#406e73"} style={{ marginRight: 5 }} />
-                    <small style={{ color: 'black' }}>facebook/mauricio.com</small>
+                    <small style={{ color: 'black' }}>{data.link ?? 'N/A'}</small>
                 </div>
             </div>
         </div>

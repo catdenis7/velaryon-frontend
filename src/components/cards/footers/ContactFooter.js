@@ -10,16 +10,17 @@ import { HiMail } from "react-icons/hi";
 import { MdExposurePlus1 } from "react-icons/md";
 // import "../assets/css/cards.css";
 
-export default function() {
+export default function(props) {
+    let data = props.props;
     return (
         <div className="row align-items-center" style={{ display: 'flex' }}>
             <div style={{ display: 'flex' }}>
                 <div>
                     <BsFillCalendarFill color={"#406e73"} style={{ marginRight: 5 }} />
-                    <small style={{ color: 'black' }}>Fecha de Contacto: 22/07/2022</small>
+                    <small style={{ color: 'black' }}>Fecha de Contacto: {data.last_contact}</small>
                     <br></br>
                     <MdExposurePlus1 color={"#406e73"} style={{ marginRight: 5 }} />
-                    <small style={{ color: 'black' }}>Veces Contactadas: 20</small>
+                    <small style={{ color: 'black' }}>Veces Contactadas: {data.contact_count}</small>
                     <br></br>
                     <button type="submit" className="btn btn-primary btn-submit" style={{width : '150px'}}>
                         Detalle

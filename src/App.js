@@ -6,7 +6,7 @@ import "./assets/css/style.css";
 import "/node_modules/bootstrap/dist/css/bootstrap.css";
 import "./assets/css/custom.css";
 
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./pages/DashboardPage";
 import ProspectCard from "./components/cards/ProspectCard";
 import ContactCard from "./components/cards/ContactCard";
 // import ClientCard from "./components/cards/ClientCard";

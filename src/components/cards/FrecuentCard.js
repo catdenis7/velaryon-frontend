@@ -14,12 +14,12 @@ import ClientFooter from "./footers/ClientFooter";
 import FrecuentFooter from "./footers/FrecuentFooter";
 // import "../assets/css/cards.css";
 
-export default function() {
+export default function(props) {
     return (
         <div className="card card-margin">
             <div className="card-footer">
-                <PersonalData></PersonalData>
-                <FrecuentFooter></FrecuentFooter>
+                <PersonalData props={props.props}></PersonalData>
+                <FrecuentFooter props={props.props}></FrecuentFooter>
             </div>
         </div>
     );
