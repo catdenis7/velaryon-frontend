@@ -21,17 +21,17 @@ function App() {
       <div className="App">
         <Routes>
           <Route index element={<Home />} />
-          <Route path="/Login" element={<Login />} />
-          <Route path="/Sidebar" element={<Sidebar />} />
-          <Route path="/Dashboard" element={<Dashboard />} />
-          <Route path="/ProspectCard" element={<ProspectCard />} />
-          <Route path="/ContactCard" element={<ContactCard />} />
-          <Route path="/ClientCard" element={<ClientCard />} />
-          <Route path="/FrecuentCard" element={<FrecuentCard />} />
-          <Route path="/Contact" element={<Contact/>}/>
-          <Route path="/Client" element={<Client/>}/>
-          <Route path="/Frecuent" element={<Frecuent/>}/>
-          <Route path="/ContactModal" element={<ContactModal/>}/>
+          <Route path="/login" element={<Login />} />
+          <Route path="/sidebar" element={<Sidebar />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/prospectCard" element={<ProspectCard />} />
+          <Route path="/contactCard" element={<ContactCard />} />
+          <Route path="/clientCard" element={<ClientCard />} />
+          <Route path="/frecuentCard" element={<FrecuentCard />} />
+          <Route path="/contact" element={<Contact/>}/>
+          <Route path="/client" element={<Client/>}/>
+          <Route path="/frecuent" element={<Frecuent/>}/>
+          <Route path="/contactModal" element={<ContactModal/>}/>
         </Routes>
 
       </div>
