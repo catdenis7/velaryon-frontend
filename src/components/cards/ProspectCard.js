@@ -13,7 +13,7 @@ import ProspectFooter from "./footers/ProspectFooter";
 // import "../assets/css/cards.css";
 
 export default function(props) {
-    console.log("Prospect Card" + JSON.stringify(props.props))
+    // console.log("Prospect Card" + JSON.stringify(props.props))
     return (
         <div className="card card-margin">
             <div className="card-footer">

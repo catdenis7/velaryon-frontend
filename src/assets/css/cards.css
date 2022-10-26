@@ -13,8 +13,11 @@
 }
 
 .img-card {
-    width: 2%;
-    display: flex;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /* width: 2%; */
+    /* display: flex; */
 }
 
 .button-icon {

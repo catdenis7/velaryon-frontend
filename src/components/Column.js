@@ -6,8 +6,8 @@ import ContactCard from "./cards/ContactCard";
 import FrecuentCard from "./cards/FrecuentCard";
 
 export default function(props) {
-    console.log("COLUMN")
-    console.log(props);
+    // console.log("COLUMN")
+    // console.log(props);
     const cards = props.props.map((item) => {
         switch (props.name) {
             case "PROSPECTO":

@@ -3,6 +3,8 @@ import Sidebar from "../components/Sidebar";
 import Column from "../components/Column";
 import dashboardViewModel from "../viewmodels/DashboardViewModel";
 import ProspectCard from "../components/cards/ProspectCard";
+import ContactModal from "../components/cards/ContactModal";
+import { Button, Modal, Row } from "react-bootstrap";
 
 
 class DashboardPage extends React.Component {
@@ -15,6 +17,7 @@ class DashboardPage extends React.Component {
             contacts: [],
             clients: [],
             recurringClients: [],
+            showModal: false
         }
     }
 
@@ -22,8 +25,8 @@ class DashboardPage extends React.Component {
         let result = await dashboardViewModel.find();
         console.log(result);
         // this.setState(result); // FUNCIONA IGUAL
-        this.setState({ 
-            prospects: result.prospects, 
+        this.setState({
+            prospects: result.prospects,
             contacts: result.contacts,
             clients: result.clients,
             recurringClients: result.recurringClients,
@@ -40,7 +43,7 @@ class DashboardPage extends React.Component {
                             </Column>
                         </div>
                         <div className="col">
-                            <Column props={this.state.clients ?? []} name="CONTACTOS">
+                            <Column props={this.state.contacts ?? []} name="CONTACTOS">
                             </Column>
                         </div>
                         <div className="col">

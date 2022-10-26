@@ -17,7 +17,7 @@ export default function(props) {
             <div style={{ display: 'flex' }}>
                 <div>
                     <BsFillCalendarFill color={"#406e73"} style={{ marginRight: 5 }} />
-                    <small style={{ color: 'black' }}>Fecha de Contacto: {data.last_contact}</small>
+                    <small style={{ color: 'black' }}>Fecha de Contacto: {Date(Date.parse(data.last_contact))}</small>
                     <br></br>
                     <MdExposurePlus1 color={"#406e73"} style={{ marginRight: 5 }} />
                     <small style={{ color: 'black' }}>Veces Contactadas: {data.contact_count}</small>

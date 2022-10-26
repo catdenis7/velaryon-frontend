@@ -17,7 +17,7 @@ export default function(props) {
         <div className="row align-items-center" style={{ display: 'flex' }}>
             <div style={{display : 'flex'}}>
                 <img
-                    src={capibaraPic}
+                    src={data.profilePicture}
                     alt="Patito Pic"
                     className="img-card"
                 />
@@ -28,11 +28,11 @@ export default function(props) {
                             fontWeight: "800",
                         }}
                     >
-                        <small>{data.facebookName}</small>
+                        <small>{data.facebookName ?? (data.name + " " + (data.lastname ?? data.lastName) )}</small>
                     </span>
                     <br></br>
                     <BsFillTelephoneFill style={{ marginRight: 5 }} color={"#406e73"} />
-                    <small style={{ color: 'black' }}>{data.phone ?? 'N/A'}</small>
+                    <small style={{ color: 'black' }}>{data.phone ?? data.phoneNumber ?? 'N/A'}</small>
                     <br></br>
                     <HiMail color={"#406e73"} style={{ marginRight: 5 }} />
                     <small style={{ color: 'black' }}>{data.email ?? 'N/A'}</small>
