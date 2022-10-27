@@ -10,17 +10,20 @@ import { HiMail } from "react-icons/hi";
 import { MdExposurePlus1 } from "react-icons/md";
 import PersonalData from "./PersonalData";
 import ProspectFooter from "./footers/ProspectFooter";
+import { Card } from "react-bootstrap";
 // import "../assets/css/cards.css";
 
 export default function(props) {
-    // console.log("Prospect Card" + JSON.stringify(props.props))
     return (
-        <div className="card card-margin">
-            <div className="card-footer">
-                <PersonalData props={props.props}></PersonalData>
-                <ProspectFooter props={props.props}>
-                </ProspectFooter>
-            </div>
+        <div>
+            <Card>
+                <Card.Title style={{fontSize : 18, margin: '10px'}}>
+                    <PersonalData props={props.props} print='1'></PersonalData>
+                </Card.Title>
+                <Card.Title style={{fontSize : 18, margin: '10px'}}>
+                    <ProspectFooter props={props.props}></ProspectFooter>
+                </Card.Title>
+            </Card>
         </div>
     );
 }

@@ -4,6 +4,8 @@ import Column from "../components/Column";
 import dashboardViewModel from "../viewmodels/DashboardViewModel";
 import ProspectCard from "../components/cards/ProspectCard";
 import ContactModal from "../components/cards/ContactModal";
+import DashboardColumn from "../components/DashboardColumn"
+
 import { Button, Modal, Row } from "react-bootstrap";
 
 
@@ -34,25 +36,25 @@ class DashboardPage extends React.Component {
     }
 
     render() {
+        console.log('PROSPECTS' + JSON.stringify(this.state.prospects));
         return (
             <Sidebar>
                 <div className="row">
                     <div className="row">
                         <div className="col">
-                            <Column props={this.state.prospects ?? []} name="PROSPECTO" >
-                            </Column>
+                            <DashboardColumn props={this.state.prospects ?? []} name="PROSPECTOS"></DashboardColumn>
                         </div>
                         <div className="col">
-                            <Column props={this.state.contacts ?? []} name="CONTACTOS">
-                            </Column>
+                            <DashboardColumn props={this.state.contacts ?? []} name="CONTACTOS">
+                            </DashboardColumn>
                         </div>
                         <div className="col">
-                            <Column props={this.state.clients ?? []} name="CLIENTES">
-                            </Column>
+                            <DashboardColumn props={this.state.clients ?? []} name="CLIENTES">
+                            </DashboardColumn>
                         </div>
                         <div className="col">
-                            <Column props={this.state.recurringClients ?? []} name="CLIENTES RECURRENTES">
-                            </Column>
+                            <DashboardColumn props={this.state.recurringClients ?? []} name="CLIENTES FRECUENTES">
+                            </DashboardColumn>
                         </div>
                     </div>
                 </div>

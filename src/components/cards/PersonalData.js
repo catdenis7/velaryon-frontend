@@ -13,6 +13,8 @@ import { MdExposurePlus1 } from "react-icons/md";
 
 export default function(props) {
     let data = props.props;
+    if(props.print != '1')
+        console.error(data.props.props);
     return (
         <div className="row align-items-center" style={{ display: 'flex' }}>
             <div style={{display : 'flex'}}>
@@ -21,7 +23,7 @@ export default function(props) {
                     alt="Patito Pic"
                     className="img-card"
                 />
-                <div style={{marginLeft : 'auto'}}>
+                <div style={{marginRight : 'auto', marginLeft:'20px'}}>
                     <span
                         style={{
                             color: "#406e73",
