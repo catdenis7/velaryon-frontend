@@ -1,12 +1,7 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
-import Column from "../components/Column";
 import dashboardViewModel from "../viewmodels/DashboardViewModel";
-import ProspectCard from "../components/cards/ProspectCard";
-import ContactModal from "../components/cards/ContactModal";
 import DashboardColumn from "../components/DashboardColumn"
-
-import { Button, Modal, Row } from "react-bootstrap";
 
 
 class DashboardPage extends React.Component {

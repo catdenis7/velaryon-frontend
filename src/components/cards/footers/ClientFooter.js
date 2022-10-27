@@ -1,5 +1,6 @@
 import { Button } from "bootstrap";
 import React from "react";
+import { Link } from "react-router-dom";
 import {
     BsFillTelephoneFill,
     BsLink45Deg,
@@ -23,13 +24,16 @@ export default function(props) {
                     <BsFillCartCheckFill color={"#406e73"} style={{ marginRight: 5 }} />
                     <small style={{ color: "black" }}>Cantidad de Productos: {data.product_count}</small>
                     <br></br>
-                    <button
+                    <Link to='client'>
+                        <button
                         type="submit"
                         className="btn btn-primary btn-submit"
                         style={{ width: "150px", float: "right" }}
-                    >
+                        >
                         Detalle
                     </button>
+                    </Link>
+                    
                 </div>
             </div>
         </div>

@@ -12,7 +12,7 @@ import ContactCard from "./components/cards/ContactCard";
 // import ClientCard from "./components/cards/ClientCard";
 // import FrecuentCard from "./components/cards/FrecuentCard";
 import Contact from "./components/Contact";
-import Client from "./components/Client";
+import Client from "./pages/ClientPage";
 import Frecuent from "./components/Frecuent";
 import ContactModal from "./components/ContactModal";
 import DashboardPage from "./pages/DashboardPage";
@@ -28,7 +28,7 @@ function App() {
           {/* <Route path="/prospectCard" element={<ProspectCard />} /> */}
           {/* <Route path="/contactCard" element={<ContactCard />} /> */}
           <Route path="/contact" element={<Contact/>}/>
-          <Route path="/client" element={<Client/>}/>
+          <Route path="/dashboard/client" element={<Client/>}/>
           <Route path="/frecuent" element={<Frecuent/>}/>
           <Route path="/contactModal" element={<ContactModal/>}/>
         </Routes>
