@@ -16,7 +16,7 @@ export default function(props) {
             <div style={{ display: 'flex' }}>
                 <div>
                     <BsFillCalendarFill color={"#406e73"} style={{ marginRight: 5 }} />
-                    <small style={{ color: 'black' }}>Último ingreso: {Date(Date.parse(data.last_session)) ?? 'N/A'}</small>
+                    <small style={{ color: 'black' }}>Último ingreso: {new Date(data.last_session).toLocaleString() ?? 'N/A'}</small>
                     <br></br>
                     <MdExposurePlus1 color={"#406e73"} style={{ marginRight: 5 }} />
                     <small style={{ color: 'black' }}>Contador de ingreso: {data.session_count}</small>

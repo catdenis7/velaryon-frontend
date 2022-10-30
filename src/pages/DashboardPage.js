@@ -16,22 +16,49 @@ class DashboardPage extends React.Component {
             recurringClients: [],
             showModal: false
         }
+        this.eventSource = new EventSource('http://localhost:5000/dashboard/notification');
+
     }
 
     async componentDidMount() {
         let result = await dashboardViewModel.find();
         console.log(result);
-        // this.setState(result); // FUNCIONA IGUAL
         this.setState({
             prospects: result.prospects,
             contacts: result.contacts,
             clients: result.clients,
             recurringClients: result.recurringClients,
         });
+
+        this.initializeNotifications();
+    }
+
+    notificiationHandler(data) {
+        let payload = JSON.parse(data);
+        this.setState({
+            prospects: payload.prospects,
+            contacts: payload.contacts,
+            clients: payload.clients,
+            recurringClients: payload.recurringClients,
+        });
+    }
+
+    initializeNotifications() {
+
+        this.eventSource.onmessage = e =>
+            this.notificiationHandler((e.data))
+
+        this.eventSource.onerror = () => {
+            this.eventSource.close();
+        }
+
+        return () => {
+            this.eventSource.close();
+        };
+
     }
 
     render() {
-        console.log('PROSPECTS' + JSON.stringify(this.state.prospects));
         return (
             <Sidebar>
                 <div className="row">

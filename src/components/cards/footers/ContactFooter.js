@@ -17,11 +17,10 @@ export default function(props) {
             <div style={{ display: 'flex' }}>
                 <div>
                     <BsFillCalendarFill color={"#406e73"} style={{ marginRight: 5 }} />
-                    <small style={{ color: 'black' }}>Fecha de Contacto: {Date(Date.parse(data.last_contact))}</small>
+                    <small style={{ color: 'black' }}>Fecha de Contacto: {new Date(data.last_contact).toLocaleString() ?? 'N/A' }</small>
                     <br></br>
                     <MdExposurePlus1 color={"#406e73"} style={{ marginRight: 5 }} />
-                    <small style={{ color: 'black' }}>Veces Contactadas: {data.contact_count}</small>
-                    <br></br>
+                    <small style={{ color: 'black' }}>Veces Contactadas: {data.contact_count}</small> <br></br>
                     <button type="submit" className="btn btn-primary btn-submit" style={{width : '150px'}}>
                         Detalle
                     </button>
