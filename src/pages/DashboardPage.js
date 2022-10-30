@@ -23,7 +23,6 @@ class DashboardPage extends React.Component {
     async componentDidMount() {
         let result = await dashboardViewModel.find();
         console.log(result);
-        // this.setState(result); // FUNCIONA IGUAL
         this.setState({
             prospects: result.prospects,
             contacts: result.contacts,
@@ -34,8 +33,14 @@ class DashboardPage extends React.Component {
         this.initializeNotifications();
     }
 
-    notificiationHandler(data){
-            console.log(data);
+    notificiationHandler(data) {
+        let payload = JSON.parse(data);
+        this.setState({
+            prospects: payload.prospects,
+            contacts: payload.contacts,
+            clients: payload.clients,
+            recurringClients: payload.recurringClients,
+        });
     }
 
     initializeNotifications() {
@@ -54,7 +59,6 @@ class DashboardPage extends React.Component {
     }
 
     render() {
-        console.log('PROSPECTS' + JSON.stringify(this.state.prospects));
         return (
             <Sidebar>
                 <div className="row">
