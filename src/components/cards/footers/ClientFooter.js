@@ -19,7 +19,7 @@ export default function(props) {
             <div style={{ display: "flex" }}>
                 <div className="col">
                     <BsFillCalendarFill color={"#406e73"} style={{ marginRight: 5 }} />
-                    <small style={{ color: "black" }}>Último pedido: {Date(Date.parse(data.order_date))}</small>
+                    <small style={{ color: "black" }}>Último pedido: {new Date(data.order_date).toLocaleString() ?? 'N/A'}</small>
                     <br></br>
                     <BsFillCartCheckFill color={"#406e73"} style={{ marginRight: 5 }} />
                     <small style={{ color: "black" }}>Cantidad de Productos: {data.product_count}</small>

@@ -23,7 +23,7 @@ export default function(props) {
                     <small style={{ color: "black" }}>Frecuencia de Pedidos: {data.frequency} días</small>
                     <br></br>
                     <BsFillCalendarFill color={"#406e73"} style={{ marginRight: 5 }} />
-                    <small style={{ color: "black" }}>Última fecha de Compra: {Date(Date.parse(data.order_date))}</small>
+                    <small style={{ color: "black" }}>Última fecha de Compra: {new Date(data.order_date).toLocaleString() ?? 'N/A'}</small>
                     <br></br>
                     <FaMoneyBillAlt color={"#406e73"} style={{ marginRight: 5 }} />
                     <small style={{ color: "black" }}>Monto Promedio de Compra: Bs. {data.average}</small>
