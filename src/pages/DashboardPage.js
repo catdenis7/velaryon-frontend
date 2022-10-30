@@ -16,6 +16,8 @@ class DashboardPage extends React.Component {
             recurringClients: [],
             showModal: false
         }
+        this.eventSource = new EventSource('http://localhost:5000/dashboard/notification');
+
     }
 
     async componentDidMount() {
@@ -28,6 +30,27 @@ class DashboardPage extends React.Component {
             clients: result.clients,
             recurringClients: result.recurringClients,
         });
+
+        this.initializeNotifications();
+    }
+
+    notificiationHandler(data){
+            console.log(data);
+    }
+
+    initializeNotifications() {
+
+        this.eventSource.onmessage = e =>
+            this.notificiationHandler((e.data))
+
+        this.eventSource.onerror = () => {
+            this.eventSource.close();
+        }
+
+        return () => {
+            this.eventSource.close();
+        };
+
     }
 
     render() {
