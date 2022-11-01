@@ -6,15 +6,7 @@ import CardPersonalInformation from "../components/CardPersonalInformation";
 import clientPageViewModel from "../viewmodels/ClientPageViewModel";
 import { useParams } from "react-router-dom";
 
-let personalInformation = [
-    {
-        name: "Mauricio",
-        lastName: "Sauza Torrez",
-        phoneNumber: "78945612",
-        email: "sauza@gmail.com",
-        profilePicture: "https://platform-lookaside.fbsbx.com/platform/profilepic/?psid=5367504253330521&width=1024&ext=1669488186&hash=AeTFJDupVu3NuKkmmjU"
-    }
-]
+
 /*
 let accordionItem = [
   {
@@ -65,6 +57,16 @@ function ClientPage(props) {
         }
         fetchData();
     }, []);
+
+    const personalInformation = [
+      {
+          name: "Catherine",
+          lastName: "Gomez Quispe",
+          phoneNumber: "78945612",
+          email: "cat@gmail.com",
+          profilePicture: "https://platform-lookaside.fbsbx.com/platform/profilepic/?psid=5367504253330521&width=1024&ext=1669488186&hash=AeTFJDupVu3NuKkmmjU"
+      }
+  ]
 
     return (
         <Sidebar>

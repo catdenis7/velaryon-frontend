@@ -14,6 +14,7 @@ import { MdExposurePlus1 } from "react-icons/md";
 
 export default function(props) {
     let data = props.props;
+    let id = "client/" + data._id;
     return (
         <div className="row align-items-center" style={{ display: "flex" }}>
             <div style={{ display: "flex" }}>
@@ -24,7 +25,7 @@ export default function(props) {
                     <BsFillCartCheckFill color={"#406e73"} style={{ marginRight: 5 }} />
                     <small style={{ color: "black" }}>Cantidad de Productos: {data.product_count}</small>
                     <br></br>
-                    <Link to='client'>
+                    <Link to={id}>
                         <button
                         type="submit"
                         className="btn btn-primary btn-submit"
