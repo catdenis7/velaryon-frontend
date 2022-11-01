@@ -7,6 +7,7 @@ import {
 } from "react-icons/bs";
 import { HiMail } from "react-icons/hi";
 import { MdExposurePlus1 } from "react-icons/md";
+import AddContactModal from "../../AddContactModal"
 // import "../assets/css/cards.css";
 
 export default function(props) {
@@ -22,7 +23,7 @@ export default function(props) {
                     <small style={{ color: 'black' }}>Contador de ingreso: {data.session_count}</small>
                 </div>
                 <div style={{marginLeft : 'auto', marginTop : 'auto'}}>
-                <BsPlusCircleFill size={35} color={"#406e73"}/>
+                <BsPlusCircleFill size={35} color={"#406e73"} onClick={()=>{props.callback(props.props.client)}}/>
                 </div>
             </div>
         </div>

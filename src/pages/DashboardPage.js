@@ -3,6 +3,7 @@ import Sidebar from "../components/Sidebar";
 import dashboardViewModel from "../viewmodels/DashboardViewModel";
 import DashboardColumn from "../components/DashboardColumn"
 
+import AddContactModal from "../components/AddContactModal";
 
 class DashboardPage extends React.Component {
 
@@ -14,7 +15,8 @@ class DashboardPage extends React.Component {
             contacts: [],
             clients: [],
             recurringClients: [],
-            showModal: false
+            showModal: false,
+            modalClient : ""
         }
         this.eventSource = new EventSource('http://localhost:5000/dashboard/notification');
 
@@ -58,13 +60,23 @@ class DashboardPage extends React.Component {
 
     }
 
+    modalCallback = (data) => {
+        console.log(data);
+        this.setState({ showModal: !this.state.showModal, modalClient : data});
+    }
+
     render() {
         return (
             <Sidebar>
+                <AddContactModal 
+                    show={this.state.showModal} 
+                    callback={this.modalCallback} 
+                    clientId={this.state.modalClient}
+                ></AddContactModal>
                 <div className="row">
                     <div className="row">
                         <div className="col">
-                            <DashboardColumn props={this.state.prospects ?? []} name="PROSPECTOS"></DashboardColumn>
+                            <DashboardColumn props={this.state.prospects ?? []} callback={this.modalCallback} name="PROSPECTOS"></DashboardColumn>
                         </div>
                         <div className="col">
                             <DashboardColumn props={this.state.contacts ?? []} name="CONTACTOS">

@@ -9,6 +9,7 @@ import contactPageViewModel from "../viewmodels/ContactPageViewModel";
 import { Accordion } from "react-bootstrap";
 import ContactAccordionHeader from "../components/accordions/ContactAccordionHeader";
 import ContactAccordionBody from "../components/accordions/ContactAccordionBody";
+import { useParams } from "react-router-dom";
 
 let personalInformation = [
     {
@@ -24,12 +25,14 @@ class ContactPage extends React.Component {
 
     constructor(props) {
         super(props);
+        console.log(useParams());
         this.state = {
             accordionItems: [],
         };
     }
 
     async componentDidMount() {
+        console.log(this.props);
         let result = await contactPageViewModel.find();
         console.log(result);
         // this.setState(result); // FUNCIONA IGUAL

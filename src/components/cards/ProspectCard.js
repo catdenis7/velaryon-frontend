@@ -14,6 +14,7 @@ import { Card } from "react-bootstrap";
 // import "../assets/css/cards.css";
 
 export default function(props) {
+        // console.log(props);
     return (
         <div>
             <Card>
@@ -21,7 +22,7 @@ export default function(props) {
                     <PersonalData props={props.props} print='1'></PersonalData>
                 </Card.Title>
                 <Card.Title style={{fontSize : 18, margin: '10px'}}>
-                    <ProspectFooter props={props.props}></ProspectFooter>
+                    <ProspectFooter props={props.props} callback={props.callback}></ProspectFooter>
                 </Card.Title>
             </Card>
         </div>

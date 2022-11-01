@@ -5,10 +5,11 @@ import ContactCard from './cards/ContactCard';
 import ClientCard from './cards/ClientCard';
 import FrecuentCard from './cards/FrecuentCard';
 export default function(props) {
+    // console.log(props);
     const cards = props.props.map((item) => {
         switch (props.name) {
             case "PROSPECTOS":
-                return <div><ProspectCard props={item}></ProspectCard><br></br></div>
+                return <div><ProspectCard props={item} callback={props.callback} ></ProspectCard><br></br></div>
             case "CONTACTOS":
                 return <div><ContactCard props={item}></ContactCard><br></br></div>
             case "CLIENTES":
@@ -17,7 +18,7 @@ export default function(props) {
                 return <div><FrecuentCard props={item}></FrecuentCard><br></br></div>
         }
     })
-    console.log({ "DashboardColumn": "", props: props.name });
+    // console.log({ "DashboardColumn": "", props: props.name });
     return <Card style={{ background: '#bccac3', borderRadius: '25px' }}>
         <Card.Title style={{ textAlign: 'center', borderRadius: '25px' }}>
             <p></p>

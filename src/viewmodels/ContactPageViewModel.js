@@ -1,11 +1,11 @@
 import axios from "axios";
 
 let contactPageViewModel = {
-    async find() {
+    async find(clientId) {
         try {
             let result;
             result = await axios.post("http://localhost:5000/clients/contacts", {
-                "clientId": "63584e44eed3cd7e14293495"
+                "clientId": clientId 
             });
             console.log(result);
             return result.data;
