@@ -19,33 +19,33 @@ export default function FrecuentCardInformation({ personalInformation }) {
               <div className="col-9">
                 <div className="row">
                   <div className="col">
-                    <h2 className="user-name">
+                    <h2 className="user-name" style={{color: "#406e73"}}>
                       <p>
                         {items.name} {items.lastName}
                       </p>
                     </h2>
                   </div>
                 </div>
-                <div className="row">
-                  <div className="col-3">
-                    <i>
-                      <BsFillTelephoneFill />
+                <div className="row" style={{textAlign: "left", alignItems: "center"}}>
+                  <div className="col col-lg-3 col-sm-4">
+                    <i style={{paddingRight: "1rem"}}>
+                      <BsFillTelephoneFill style={{color: "406e73"}}/>
                     </i>
-                    {items.phoneNumber}
+                    <span style={{fontWeight: "600"}}>{items.phoneNumber}</span>
                   </div>
-                  <div className="col-3">
-                    <i>
-                      <HiMail />
+                  <div className="col col-lg-3 col-sm-4">
+                    <i style={{paddingRight: "1rem"}}>
+                      <HiMail style={{color: "406e73"}}/>
                     </i>
-                    {items.email}
+                    <span style={{fontWeight: "600"}}>{items.email}</span>
                   </div>
-                  <div className="col-3">
-                    <i>
-                      <BsLink45Deg />
+                  <div className="col col-lg-3 col-sm-4">
+                    <i style={{paddingRight: "1rem"}}>
+                      <BsLink45Deg style={{color: "406e73"}}/>
                     </i>
-                    {items.facebookLink}
+                    <span style={{fontWeight: "600"}}>{items.facebookLink}</span>
                   </div>
-                  <div className="col-3"></div>
+                  <div className="col col-lg-3 col-sm-4"></div>
                 </div>
               </div>
             </div>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import AcoordionItem from "../components/AccordionItem";
 import "../assets/css/client.css";
-import CardPersonalInformation from "../components/CardPersonalInformation";
+import CardPersonalInformation from "../components/CardPersonalInformationClient";
 import clientPageViewModel from "../viewmodels/ClientPageViewModel";
 import { useParams } from "react-router-dom";
 
@@ -28,7 +28,8 @@ function ClientPage(props) {
           lastName: "Gomez Quispe",
           phoneNumber: "78945612",
           email: "cat@gmail.com",
-          profilePicture: "https://platform-lookaside.fbsbx.com/platform/profilepic/?psid=5367504253330521&width=1024&ext=1669488186&hash=AeTFJDupVu3NuKkmmjU"
+          profilePicture: "https://platform-lookaside.fbsbx.com/platform/profilepic/?psid=5367504253330521&width=1024&ext=1669488186&hash=AeTFJDupVu3NuKkmmjU",
+          url: "cat/facebook.com"
       }
   ]
 
@@ -37,7 +38,7 @@ function ClientPage(props) {
             <div className="main-contact-container">
                 <div className="header-container">
                     <div className="title-container">
-                        <h1 className="title">CLIENTE</h1>
+                        <h1 className="title" style={{color: "#434846", fontWeight: "700"}}>CLIENTE</h1>
                     </div>
                     <CardPersonalInformation personalInformation={personalInformation}></CardPersonalInformation>
                 </div>

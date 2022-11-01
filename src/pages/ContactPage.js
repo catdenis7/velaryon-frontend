@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import AcoordionItem from "../components/AccordionItem";
 import "../assets/css/client.css";
-import CardPersonalInformation from "../components/CardPersonalInformation";
+import CardPersonalInformationContact from "../components/CardPersonalInformationContact";
 import clientPageViewModel from "../viewmodels/ClientPageViewModel";
 import ClientPage from "./ClientPage";
 import contactPageViewModel from "../viewmodels/ContactPageViewModel";
@@ -13,11 +13,12 @@ import { useParams } from "react-router-dom";
 
 let personalInformation = [
     {
-        name: "Mauricio",
-        lastName: "Sauza Torrez",
+        name: "Catherine",
+        lastName: "Gomez",
         phoneNumber: "78945612",
-        email: "sauza@gmail.com",
-        profilePicture: "https://platform-lookaside.fbsbx.com/platform/profilepic/?psid=5367504253330521&width=1024&ext=1669488186&hash=AeTFJDupVu3NuKkmmjU"
+        email: "cat@gmail.com",
+        profilePicture: "https://platform-lookaside.fbsbx.com/platform/profilepic/?psid=5367504253330521&width=1024&ext=1669488186&hash=AeTFJDupVu3NuKkmmjU",
+        url: "cat/facebook.com"
     }
 ]
 
@@ -69,9 +70,9 @@ function ContactPage(props) {
             <div className="main-contact-container">
                 <div className="header-container">
                     <div className="title-container">
-                        <h1 className="title">CONTACTO</h1>
+                        <h1 className="title" style={{color: "#434846", fontWeight: "700"}}>CONTACTO</h1>
                     </div>
-                    <CardPersonalInformation personalInformation={personalInformation ?? []}></CardPersonalInformation>
+                    <CardPersonalInformationContact personalInformation={personalInformation ?? []}></CardPersonalInformationContact>
                 </div>
                 <Accordion>
                     {accordions}
