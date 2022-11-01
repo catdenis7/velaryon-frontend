@@ -50,7 +50,7 @@ export default function CardPersonalInformation({ personalInformation }) {
                       type="submit"
                       className="btn btn-primary btn-submit"
                     >
-                      INICIAR SESIÓN
+                      AGREGAR DETALLE
                     </button>
                   </div>
                 </div>

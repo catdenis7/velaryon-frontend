@@ -6,7 +6,7 @@ export default function FrecuentAccordion({ notifications }) {
         return (
           <Accordion defaultActiveKey="0" key={index}>
             <Accordion.Item eventKey="1" style={{ backgroundColor: "#eeeeee" }}>
-              <Accordion.Header>{index + 1}. Notificación - {items.date}</Accordion.Header>
+              <Accordion.Header>{index + 1}. Notificación - {new Date(items.date).toLocaleString() ?? 'N/A'}</Accordion.Header>
               <Accordion.Body>
                 <span style={{fontWeight:"bold"}}>Mensaje enviado:  </span>
                 <span>

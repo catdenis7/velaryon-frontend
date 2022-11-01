@@ -40,7 +40,7 @@ export default function(props) {
                     <small style={{ color: 'black' }}>{data.email ?? 'N/A'}</small>
                     <br></br>
                     <BsLink45Deg color={"#406e73"} style={{ marginRight: 5 }} />
-                    <small style={{ color: 'black' }}>{data.link ?? 'N/A'}</small>
+                    <small style={{ color: 'black' }}>{data.url ?? 'N/A'}</small>
                 </div>
             </div>
         </div>

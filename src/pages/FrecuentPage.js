@@ -1,8 +1,7 @@
 import react, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import FrecuentAccordion from "../components/FrecuentAccordion";
 import FrecuentBody from "../components/FrecuentBody";
-import FrecuentCardInformation from "../components/FrecuentCardInformation";
+import CardPersonalInformation from "../components/CardPersonalInformationClient";
 import Sidebar from "../components/Sidebar";
 import clientPageViewModel from "../viewmodels/ClientPageViewModel";
 let personalInformation = [
@@ -47,9 +46,9 @@ export default function FrecuentPage() {
                     <div className="title-container">
                         <h1 className="title" style={{color: "#434846", fontWeight: "700"}}>CLIENTE FRECUENTE</h1>
                     </div>
-                    <FrecuentCardInformation
+                    <CardPersonalInformation
                         personalInformation={personalInformation}
-                    ></FrecuentCardInformation>
+                    ></CardPersonalInformation>
                 </div>
                 <FrecuentBody />
             </div>
