@@ -79,7 +79,7 @@ class DashboardPage extends React.Component {
                             <DashboardColumn props={this.state.prospects ?? []} callback={this.modalCallback} name="PROSPECTOS"></DashboardColumn>
                         </div>
                         <div className="col">
-                            <DashboardColumn props={this.state.contacts ?? []} name="CONTACTOS">
+                            <DashboardColumn props={this.state.contacts ?? []} callback={this.modalCallback} name="CONTACTOS">
                             </DashboardColumn>
                         </div>
                         <div className="col">

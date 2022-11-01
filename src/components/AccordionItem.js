@@ -1,14 +1,14 @@
 export default function AccordionItem({accordionItem}) {
   return (
-    <div class="accordion" id="accordionExample">
+    <div className="accordion" id="accordionPanelsStayOpenExample">
     {accordionItem.map((accordionItem, index) => {
-        let heading = "heading" +JSON.stringify(index);
-        let collapseOne = "collapse" +JSON.stringify(index);
-        let collapseTwo = "#collapse" +JSON.stringify(index);
+        let heading = "panelsStayOpen-heading" +JSON.stringify(index);
+        let collapseOne = "panelsStayOpen-collapse" +JSON.stringify(index);
+        let collapseTwo = "#panelsStayOpen-collapse" +JSON.stringify(index);
         return (  
-            <div class="accordion-item">
-            <h2 class="accordion-header" id={heading}>
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={collapseTwo} aria-expanded="true" aria-controls={collapseOne}>
+            <div className="accordion-item">
+            <h2 className="accordion-header" id={heading}>
+            <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target={collapseTwo} aria-expanded="true" aria-controls={collapseOne}>
             <div className="container">
                 <div className="row">
                     <div className="col">
@@ -27,8 +27,8 @@ export default function AccordionItem({accordionItem}) {
             </div>
             </button>
             </h2>
-            <div id={collapseOne} class="accordion-collapse collapse show" aria-labelledby={heading} data-bs-parent="#accordionExample">
-                <div class="accordion-body">
+            <div id={collapseOne} className="accordion-collapse collapse show" aria-labelledby={heading}>
+                <div className="accordion-body">
                     <div className="container">
                         <div className="row">
                             <div className="col"><strong>Cantidad</strong></div>

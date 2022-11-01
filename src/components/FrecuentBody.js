@@ -10,7 +10,7 @@ import { useParams } from "react-router-dom";
 export default function FrecuentBody() {
 
     const [notifications, setNotifications] = useState([]);
-    const [buyDetail, setBuyDetail] = useState([]);
+    const [accordionItem, setAccordionItem] = useState([]);
 
     const params = useParams();
 
@@ -19,8 +19,8 @@ export default function FrecuentBody() {
             let result = await frequentPageViewModel.find(params.id);
             console.log(result);
             setNotifications(result);
-            let buyResult = await clientPageViewModel.find(params.id);
-            setBuyDetail(buyResult);
+            let accordionItemResult = await clientPageViewModel.find(params.id);
+            setAccordionItem(accordionItemResult);
         }
         fetchData();
     }, []);
@@ -36,7 +36,8 @@ export default function FrecuentBody() {
                 <FrecuentAccordion notifications={notifications ?? []}></FrecuentAccordion>
             </Tab>
             <Tab eventKey="Detalle de compra" title="Detalle de compra">
-                    <FrecuentDetailAccordion buyDetail={buyDetail ?? []}></FrecuentDetailAccordion>
+                  
+                    <AccordionItem accordionItem={accordionItem ?? []}></AccordionItem>
             </Tab>
         </Tabs>
     );

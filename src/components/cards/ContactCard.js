@@ -21,7 +21,7 @@ export default function(props) {
                     <PersonalData props={props.props} print='1'></PersonalData>
                 </Card.Title>
                 <Card.Title style={{fontSize : 18, margin: '10px'}}>
-                    <ContactFooter props={props.props}></ContactFooter>
+                    <ContactFooter props={props.props} callback={props.callback}></ContactFooter>
                 </Card.Title>
             </Card>
         </div>

@@ -17,7 +17,7 @@ let personalInformation = [
             "https://platform-lookaside.fbsbx.com/platform/profilepic/?psid=5367504253330521&width=1024&ext=1669488186&hash=AeTFJDupVu3NuKkmmjU",
     },
 ];
-
+/*
 let accordionItem = [
     {
         date: "23/10/2022",
@@ -36,22 +36,9 @@ let accordionItem = [
         message: "Estás interesado en el nuevo álbum de The Beatles",
     },
 ];
-
+*/
 export default function FrecuentPage() {
     
-
-    const [accordionItem, setAccordionItem] = useState([]);
-
-    const params = useParams();
-
-    useEffect(() => {
-        async function fetchData() {
-            let result = await clientPageViewModel.find(params.id);
-            console.log(result);
-            setAccordionItem(result)
-        }
-        fetchData();
-    }, []);
 
     return (
         <Sidebar>

@@ -1,5 +1,6 @@
 import { Button } from "bootstrap";
 import React from "react";
+import { Link } from "react-router-dom";
 import {
     BsFillTelephoneFill,
     BsLink45Deg,
@@ -15,6 +16,7 @@ import { FaMoneyBillAlt } from "react-icons/fa";
 
 export default function(props) {
     let data = props.props;
+    let id = "frecuent/" + data._id;
     return (
         <div className="row align-items-center" style={{ display: "flex" }}>
             <div style={{ display: "flex" }}>
@@ -28,13 +30,15 @@ export default function(props) {
                     <FaMoneyBillAlt color={"#406e73"} style={{ marginRight: 5 }} />
                     <small style={{ color: "black" }}>Monto Promedio de Compra: Bs. {data.average}</small>
                     <br></br>
+                    <Link to={id}>
                     <button
                         type="submit"
                         className="btn btn-primary btn-submit"
                         style={{ width: "150px", float: "right" }}
                     >
-                        Notificaciones
+                        Detalle
                     </button>
+                    </Link>
                 </div>
             </div>
         </div>

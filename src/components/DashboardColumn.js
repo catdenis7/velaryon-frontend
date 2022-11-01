@@ -11,7 +11,7 @@ export default function(props) {
             case "PROSPECTOS":
                 return <div><ProspectCard props={item} callback={props.callback} ></ProspectCard><br></br></div>
             case "CONTACTOS":
-                return <div><ContactCard props={item}></ContactCard><br></br></div>
+                return <div><ContactCard props={item} callback={props.callback}></ContactCard><br></br></div>
             case "CLIENTES":
                 return <div><ClientCard props={item}></ClientCard><br></br></div>
             case "CLIENTES FRECUENTES":
