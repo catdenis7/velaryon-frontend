@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import AcoordionItem from "../components/AccordionItem";
 import "../assets/css/client.css";
@@ -21,55 +21,63 @@ let personalInformation = [
     }
 ]
 
-class ContactPage extends React.Component {
+function ContactPage(props) {
 
-    constructor(props) {
-        super(props);
-        console.log(useParams());
-        this.state = {
-            accordionItems: [],
-        };
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         accordionItems: [],
+    //     };
+    // }
+    //
+    // async componentDidMount() {
+    //     let result = await contactPageViewModel.find();
+    //     console.log(result);
+    //     // this.setState(result); // FUNCIONA IGUAL
+    //     this.setState({
+    //         accordionItems: result,
+    //     });
+    // }
 
-    async componentDidMount() {
-        console.log(this.props);
-        let result = await contactPageViewModel.find();
-        console.log(result);
-        // this.setState(result); // FUNCIONA IGUAL
-        this.setState({
-            accordionItems: result,
-        });
-    }
+    const [accordionItems, setAccordionItems] = useState([]);
+    let params =  useParams();
 
-    render() {
-        let accordions = this.state.accordionItems.map((accordion, index) => {
-            return (<Accordion.Item eventKey={index}>
-                <Accordion.Header>
-                    <ContactAccordionHeader data={accordion ?? []} index={index}>
-                    </ContactAccordionHeader>
-                </Accordion.Header>
-                <Accordion.Body>
-                    <ContactAccordionBody props={accordion ?? []}>
-                    </ContactAccordionBody>
-                </Accordion.Body>
-            </Accordion.Item>
-            );
-        });
-        return (
-            <Sidebar>
-                <div className="main-contact-container">
-                    <div className="header-container">
-                        <div className="title-container">
-                            <h1 className="title">CONTACTO</h1>
-                        </div>
-                        <CardPersonalInformation personalInformation={personalInformation ?? []}></CardPersonalInformation>
-                    </div>
-                    <Accordion>
-                        {accordions}
-                    </Accordion>
-                </div>
-            </Sidebar>
+    useEffect(() => {
+        async function fetchData() {
+            let result = await contactPageViewModel.find(params.id);
+            setAccordionItems(result);
+        }
+        fetchData();
+    },[])
+
+    
+    let accordions = accordionItems.map((accordion, index) => {
+        return (<Accordion.Item eventKey={index}>
+            <Accordion.Header>
+                <ContactAccordionHeader data={accordion ?? []} index={index}>
+                </ContactAccordionHeader>
+            </Accordion.Header>
+            <Accordion.Body>
+                <ContactAccordionBody props={accordion ?? []}>
+                </ContactAccordionBody>
+            </Accordion.Body>
+        </Accordion.Item>
         );
-    }
+    });
+    return (
+        <Sidebar>
+            <div className="main-contact-container">
+                <div className="header-container">
+                    <div className="title-container">
+                        <h1 className="title">CONTACTO</h1>
+                    </div>
+                    <CardPersonalInformation personalInformation={personalInformation ?? []}></CardPersonalInformation>
+                </div>
+                <Accordion>
+                    {accordions}
+                </Accordion>
+            </div>
+        </Sidebar>
+    );
 }
 export default ContactPage;

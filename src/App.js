@@ -16,7 +16,7 @@ function App() {
                     <Route index element={<Login />} />
                     <Route path="/dashboard" element={<DashboardPage />} />
                     <Route path="/contact/:id" element={<ContactPage/>} />
-                    <Route path="/dashboard/client" element={<Client />} />
+                    <Route path="/dashboard/client/:id" element={<Client />} />
                     <Route path="/dashboard/frecuent" element={<Frecuent />} />
                     <Route path="/contactModal" element={<ContactModal />} />
                 </Routes>

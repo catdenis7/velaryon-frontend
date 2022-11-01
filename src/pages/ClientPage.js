@@ -1,18 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar";
 import AcoordionItem from "../components/AccordionItem";
 import "../assets/css/client.css";
 import CardPersonalInformation from "../components/CardPersonalInformation";
 import clientPageViewModel from "../viewmodels/ClientPageViewModel";
+import { useParams } from "react-router-dom";
 
 let personalInformation = [
-  {
-    name: "Mauricio",
-    lastName: "Sauza Torrez",
-    phoneNumber: "78945612",
-    email: "sauza@gmail.com",
-    profilePicture: "https://platform-lookaside.fbsbx.com/platform/profilepic/?psid=5367504253330521&width=1024&ext=1669488186&hash=AeTFJDupVu3NuKkmmjU"
-  }
+    {
+        name: "Mauricio",
+        lastName: "Sauza Torrez",
+        phoneNumber: "78945612",
+        email: "sauza@gmail.com",
+        profilePicture: "https://platform-lookaside.fbsbx.com/platform/profilepic/?psid=5367504253330521&width=1024&ext=1669488186&hash=AeTFJDupVu3NuKkmmjU"
+    }
 ]
 /*
 let accordionItem = [
@@ -50,42 +51,33 @@ let accordionItem = [
   }
 ]
 */
-class ClientPage extends React.Component {
+function ClientPage(props) {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      prospects: [],
-      contacts: [],
-      clients: [],
-      recurringClients: [],
-      showModal: false
-    }
-  }
+    const [accordionItem, setAccordionItem] = useState([]);
+    const [showModal, setShowModal] = useState(false);
 
-  async componentDidMount() {
-    let result = await clientPageViewModel.find();
-    console.log(result);
-    // this.setState(result); // FUNCIONA IGUAL
-    this.setState({
-      accordionItem: result,
-    });
-  }
+    const params = useParams();
+    useEffect(() => {
+        async function fetchData() {
+            let result = await clientPageViewModel.find(params.id);
+            console.log(result);
+            setAccordionItem(result)
+        }
+        fetchData();
+    }, []);
 
-  render() {
     return (
-      <Sidebar>
-        <div className="main-contact-container">
-          <div className="header-container">
-            <div className="title-container">
-              <h1 className="title">CLIENTE</h1>
+        <Sidebar>
+            <div className="main-contact-container">
+                <div className="header-container">
+                    <div className="title-container">
+                        <h1 className="title">CLIENTE</h1>
+                    </div>
+                    <CardPersonalInformation personalInformation={personalInformation}></CardPersonalInformation>
+                </div>
+                <AcoordionItem accordionItem={accordionItem ?? []}></AcoordionItem>
             </div>
-            <CardPersonalInformation personalInformation={personalInformation}></CardPersonalInformation>
-          </div>
-          <AcoordionItem accordionItem={this.state.accordionItem ?? []}></AcoordionItem>
-        </div>
-      </Sidebar>
+        </Sidebar>
     );
-  }
 }
 export default ClientPage;
