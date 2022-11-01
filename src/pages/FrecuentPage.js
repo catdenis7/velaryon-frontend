@@ -11,7 +11,7 @@ let personalInformation = [
         lastName: "Gomez",
         phoneNumber: "78945612",
         email: "Catula@gmail.com",
-        facebookLink: "facebook/catherine.com",
+        url: "facebook/catherine.com",
         profilePicture:
             "https://platform-lookaside.fbsbx.com/platform/profilepic/?psid=5367504253330521&width=1024&ext=1669488186&hash=AeTFJDupVu3NuKkmmjU",
     },

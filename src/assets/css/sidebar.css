@@ -18,8 +18,8 @@ main {
 .sidebar-container {
   background-color: #406e73;
   color: #eeeeee;
-  height: 100vh;
-  width: 250px;
+  height: 100vmax;
+  width: 200px;
 }
 
 .sidebar-top-section {
