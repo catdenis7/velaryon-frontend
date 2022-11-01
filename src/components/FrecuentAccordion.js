@@ -4,11 +4,11 @@ export default function FrecuentAccordion({ notifications }) {
     <>
       {notifications.map((items, index) => {
         return (
-          <Accordion defaultActiveKey="0" key={items.id}>
+          <Accordion defaultActiveKey="0" key={index}>
             <Accordion.Item eventKey="1" style={{ backgroundColor: "#eeeeee" }}>
               <Accordion.Header>{index + 1}. Notificación - {items.date}</Accordion.Header>
               <Accordion.Body>
-                <label>Mensaje enviado: </label>
+                <span style={{fontWeight:"bold"}}>Mensaje enviado:  </span>
                 <span>
                  {items.message}
                 </span>

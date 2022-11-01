@@ -4,15 +4,15 @@ export default function FrecuentDetailAccordion({ buyDetail }) {
     <>
       {buyDetail.map((items, index) => {
         return (
-          <Accordion defaultActiveKey="0" key={items.id}>
+          <Accordion defaultActiveKey="0" key={index}>
             <Accordion.Item
               eventKey="1"
               style={{ backgroundColor: "#eeeeee" }}
             >
               <Accordion.Header>
-                <div className="row">
+                <div className="row" sytle={{display : 'flex'}}>
                   <div className="col">{index + 1} Venta -</div>
-                  <div className="col">{items.date}</div>
+                  <div className="col">{new Date(items.date).toLocaleString()}</div>
                   <div className="col">Cantidad: {items.orderQuantity}</div>
                   <div className="col">SUB TOTAL: {items.total}</div>
                 </div>

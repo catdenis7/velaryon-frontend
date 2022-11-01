@@ -15,7 +15,7 @@ export default function AccordionItem({accordionItem}) {
                         {index + 1} Venta - 
                     </div>
                     <div className="col">
-                        {accordionItem.date}
+                        {new Date(accordionItem.date).toLocaleString()}
                     </div>
                     <div className="col">
                         Cantidad: {accordionItem.orderQuantity}

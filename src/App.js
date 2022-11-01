@@ -17,7 +17,7 @@ function App() {
                     <Route path="/dashboard" element={<DashboardPage />} />
                     <Route path="/contact/:id" element={<ContactPage/>} />
                     <Route path="/dashboard/client/:id" element={<Client />} />
-                    <Route path="/dashboard/frecuent" element={<Frecuent />} />
+                    <Route path="/dashboard/frecuent/:id" element={<Frecuent />} />
                     <Route path="/contactModal" element={<ContactModal />} />
                 </Routes>
 

@@ -7,42 +7,6 @@ import clientPageViewModel from "../viewmodels/ClientPageViewModel";
 import { useParams } from "react-router-dom";
 
 
-/*
-let accordionItem = [
-  {
-    date: '23/10/2022',
-    orderQuantity: '2',
-    total: '2400',
-    lines: [
-      {
-        quantity: '2',
-        product: 'The Beatles - Let it Be - CD',
-        price: '120',
-        total: '240'
-      }
-    ]
-  },
-  {
-    date: '27/10/2022',
-    orderQuantity: '3',
-    total: '350',
-    lines: [
-      {
-        quantity: '1',
-        product: 'The Beatles - Hey Jude - CD',
-        price: '90',
-        total: '90'
-      },
-      {
-        quantity: '2',
-        product: 'Harry Styles - Fine Line - Vinilo',
-        price: '130',
-        total: '260'
-      }
-    ]
-  }
-]
-*/
 function ClientPage(props) {
 
     const [accordionItem, setAccordionItem] = useState([]);
