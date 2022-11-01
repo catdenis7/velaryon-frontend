@@ -19,21 +19,21 @@ export default function CardPersonalInformation({ personalInformation }) {
                         <div className="col-9">
                             <div className="row">
                                 <div className="col">
-                                    <h2 className="user-name">{cardItem.name} {cardItem.lastName}</h2>
+                                    <h2 className="user-name" style={{color: "#406e73"}}>{cardItem.name} {cardItem.lastName}</h2>
                                 </div>
                             </div>
-                            <div className="row">
-                                <div className="col-4">
-                                    <i><BsFillTelephoneFill /></i>
-                                    {cardItem.phoneNumber}
+                            <div className="row" style={{textAlign: "left", alignItems: "center"}}>
+                                <div className="col col-lg-3 col-sm-4">
+                                    <i style={{paddingRight: "1rem"}}><BsFillTelephoneFill style={{color: "406e73"}}/></i>
+                                    <span style={{fontWeight: "600"}}>{cardItem.phoneNumber}</span>
                                 </div>
-                                <div className="col-4">
-                                    <i><HiMail /></i>
-                                    {cardItem.email}
+                                <div className="col col-lg-3 col-sm-4">
+                                    <i style={{paddingRight: "1rem"}}><HiMail style={{color: "406e73"}}/></i>
+                                    <span style={{fontWeight: "600"}}>{cardItem.email}</span>
                                 </div>
-                                <div className="col-4">
-                                    <i><BsLink45Deg /></i>
-                                    {cardItem.url}
+                                <div className="col col-lg-3 col-sm-4">
+                                    <i style={{paddingRight: "1rem"}}><BsLink45Deg style={{color: "406e73"}}/></i>
+                                    <span style={{fontWeight: "600"}}>{cardItem.url}</span>
                                 </div>
                             </div>
                         </div>
@@ -41,8 +41,6 @@ export default function CardPersonalInformation({ personalInformation }) {
                 </div>
                 );
             })}
-
-
         </div>
     );
 }

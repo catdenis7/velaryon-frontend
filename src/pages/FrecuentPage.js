@@ -4,7 +4,7 @@ import FrecuentAccordion from "../components/FrecuentAccordion";
 import FrecuentBody from "../components/FrecuentBody";
 import FrecuentCardInformation from "../components/FrecuentCardInformation";
 import Sidebar from "../components/Sidebar";
-
+import clientPageViewModel from "../viewmodels/ClientPageViewModel";
 let personalInformation = [
     {
         id: 0,
@@ -45,7 +45,7 @@ export default function FrecuentPage() {
             <div className="main-contact-container">
                 <div className="header-container">
                     <div className="title-container">
-                        <h1 className="title">CLIENTE FRECUENTE</h1>
+                        <h1 className="title" style={{color: "#434846", fontWeight: "700"}}>CLIENTE FRECUENTE</h1>
                     </div>
                     <FrecuentCardInformation
                         personalInformation={personalInformation}
