@@ -2,7 +2,6 @@ import React, { useEffect, useCallback, useState} from "react";
 import "../assets/css/login.css";
 import logo from "../assets/images/velaryon logo.png";
 import axios from 'axios'
-import Cookies from "js-cookie";
 import { useAuthContext } from "../context/AuthContext";
 import { Button } from "react-bootstrap";
 export default function(props) {

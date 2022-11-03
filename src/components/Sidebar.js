@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BsFillHouseFill, BsFillPersonFill } from "react-icons/bs";
 import { TbVinyl } from "react-icons/tb";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../assets/css/sidebar.css";
 export default function ({ children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,11 +18,11 @@ export default function ({ children }) {
     //   name: "Login",
     //   icon: <BsFillPersonFill />,
     // },
-    // {
-    //   path: "/ProspectCard",
-    //   name: "Card",
-    //   icon: <TbVinyl/>
-    // }
+    {
+      path: "/dashboard/logout",
+      name: "Logout",
+      icon: <TbVinyl/>
+    }
   ];
   return (
     <div className="sidebar-main-container">
@@ -40,9 +40,9 @@ export default function ({ children }) {
           </div>
         </div>
         {menuItems.map((item, index) => (
-          <NavLink
+          <Link
             to={item.path}
-            key={index}
+            // key={index}
             className="sidebar-link"
             activeclassname="active"
           >
@@ -53,7 +53,7 @@ export default function ({ children }) {
             >
               {item.name}
             </div>
-          </NavLink>
+          </Link>
         ))}
       </div>
       <main>{children}</main>
