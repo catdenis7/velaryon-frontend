@@ -28,7 +28,7 @@ export default function AccordionItem({ accordionItem }) {
                       <h5>Cantidad: {accordionItem.orderQuantity}</h5>
                     </div>
                     <div className="col">
-                        <h5>SUB TOTAL: {accordionItem.total}</h5>
+                        <h5>SUB TOTAL: Bs. {accordionItem.total}</h5>
                         </div>
                   </div>
                 </div>
