@@ -10,6 +10,7 @@ import { useParams } from "react-router-dom";
 function ClientPage(props) {
 
     const [accordionItem, setAccordionItem] = useState([]);
+    const [personalInformation, setPersonalInformation] = useState([]);
     const [showModal, setShowModal] = useState(false);
 
     const params = useParams();
@@ -17,21 +18,24 @@ function ClientPage(props) {
         async function fetchData() {
             let result = await clientPageViewModel.find(params.id);
             console.log(result);
-            setAccordionItem(result)
+            setAccordionItem(result);
+
+            let personalDataResult = await clientPageViewModel.getPersonalData(params.id);
+            setPersonalInformation(personalDataResult);
         }
         fetchData();
     }, []);
 
-    const personalInformation = [
-      {
-          name: "Catherine",
-          lastName: "Gomez Quispe",
-          phoneNumber: "78945612",
-          email: "cat@gmail.com",
-          profilePicture: "https://platform-lookaside.fbsbx.com/platform/profilepic/?psid=5367504253330521&width=1024&ext=1669488186&hash=AeTFJDupVu3NuKkmmjU",
-          url: "cat/facebook.com"
-      }
-  ]
+  //   const personalInformation = [
+  //     {
+  //         name: "Catherine",
+  //         lastName: "Gomez Quispe",
+  //         phoneNumber: "78945612",
+  //         email: "cat@gmail.com",
+  //         profilePicture: "https://platform-lookaside.fbsbx.com/platform/profilepic/?psid=5367504253330521&width=1024&ext=1669488186&hash=AeTFJDupVu3NuKkmmjU",
+  //         url: "cat/facebook.com"
+  //     }
+  // ]
 
     return (
         <Sidebar>
