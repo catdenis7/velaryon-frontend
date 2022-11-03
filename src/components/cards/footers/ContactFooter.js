@@ -13,7 +13,6 @@ import { MdExposurePlus1 } from "react-icons/md";
 
 export default function (props) {
     let data = props.props;
-    console.log("DATA ===========>" + JSON.stringify(data));
     let id = "contact/" + data._id;
     return (
         <div className="row align-items-center" style={{ display: 'flex' }}>

@@ -2,6 +2,7 @@ import React from "react";
 import Sidebar from "../components/Sidebar";
 import dashboardViewModel from "../viewmodels/DashboardViewModel";
 import DashboardColumn from "../components/DashboardColumn"
+import ProspectModal from "../components/ProspectModal";
 
 import AddContactModal from "../components/AddContactModal";
 
@@ -16,9 +17,9 @@ class DashboardPage extends React.Component {
             clients: [],
             recurringClients: [],
             showModal: false,
-            modalClient : "",
+            modalClient: "",
             showProspectModal: false,
-            modalProspect : ""
+            modalProspect: ""
         }
         this.eventSource = new EventSource('http://localhost:5000/dashboard/notification');
 
@@ -63,34 +64,36 @@ class DashboardPage extends React.Component {
     }
 
     modalCallback = (data) => {
-        this.setState({ showModal: !this.state.showModal, modalClient : data});
+        console.log("DATA CONTACT ==============>" + data);
+        this.setState({ showModal: !this.state.showModal, modalClient: data });
     }
 
     modalTestCallback = (data) => {
-        this.setState({ showProspectModal : !this.state.showProspectModal, modalProspect : data});
-
+        console.log("DATA PROSPECT ==============>" + data);
+        this.setState({ showProspectModal: !this.state.showProspectModal, modalProspect: data });
     }
+
 
     render() {
         return (
             <Sidebar>
-                <AddContactModal 
-                    show={this.state.showModal} 
-                    callback={this.modalCallback} 
+                <AddContactModal
+                    show={this.state.showModal}
+                    callback={this.modalCallback}
                     clientId={this.state.modalClient}
                 ></AddContactModal>
-                <AddContactModal 
-                    show={this.state.showProspectModal} 
-                    callback={this.modalTestCallback} 
-                    clientId={this.state.modalProspect}
-                ></AddContactModal>
+                <ProspectModal
+                    show={this.state.showProspectModal}
+                    callback={this.modalTestCallback}
+                    prospectId={this.state.modalProspect}
+                ></ProspectModal>
                 <div className="row">
                     <div className="row">
                         <div className="col">
-                            <DashboardColumn props={this.state.prospects ?? []} callback={this.modalCallback} name="PROSPECTOS"></DashboardColumn>
+                            <DashboardColumn props={this.state.prospects ?? []} callback={this.modalTestCallback} name="PROSPECTOS"></DashboardColumn>
                         </div>
                         <div className="col">
-                            <DashboardColumn props={this.state.contacts ?? []} callback={this.modalTestCallback} name="CONTACTOS">
+                            <DashboardColumn props={this.state.contacts ?? []} callback={this.modalCallback} name="CONTACTOS">
                             </DashboardColumn>
                         </div>
                         <div className="col">

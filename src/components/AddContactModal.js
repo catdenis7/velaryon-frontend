@@ -30,6 +30,7 @@ class AddContactModal extends React.Component {
     async storeContact() {
         this.setState({clientId : this.props.clientId})
         addContactModalViewModel.addContact(this.state);
+        this.props.callback();
     }
 
     render() {

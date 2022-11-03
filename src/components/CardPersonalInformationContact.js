@@ -56,15 +56,6 @@ export default function CardPersonalInformation({ personalInformation }) {
                       </i>
                       <span style={{ fontWeight: "600" }}>{cardItem.url}</span>
                     </div>
-                    <div className="col col-lg-3 col-sm-4">
-                      <button
-                        type="submit"
-                        className="btn btn-primary btn-submit"
-                        onClick={handleShow}
-                      >
-                        AGREGAR DETALLE
-                      </button>
-                    </div>
                   </div>
                 </div>
               </div>
