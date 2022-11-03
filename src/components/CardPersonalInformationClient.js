@@ -1,6 +1,4 @@
-import capibaraPic from "../assets/images/Capibara formal-modified.png";
 import { BsFillTelephoneFill, BsLink45Deg } from "react-icons/bs";
-// import "bootstrap/dist/css/bootstrap.min.css";
 import { HiMail } from "react-icons/hi";
 export default function CardPersonalInformation({ personalInformation }) {
     return (

@@ -9,7 +9,7 @@ export default function ({ children }) {
 
   const menuItems = [
     {
-      path: "/",
+      path: "/dashboard",
       name: "Home",
       icon: <BsFillHouseFill />,
     },

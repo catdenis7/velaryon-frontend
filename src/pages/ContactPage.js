@@ -43,12 +43,16 @@ function ContactPage(props) {
   // }
 
   const [accordionItems, setAccordionItems] = useState([]);
+  const [personalInformation, setPersonalInformation] = useState([]);
   let params = useParams();
 
   useEffect(() => {
     async function fetchData() {
       let result = await contactPageViewModel.find(params.id);
       setAccordionItems(result);
+      let personalDataResult = await clientPageViewModel.getPersonalData(params.id);
+      setPersonalInformation(personalDataResult);
+      
     }
     fetchData();
   }, []);
