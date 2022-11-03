@@ -8,21 +8,32 @@ import ContactModal from "./components/ContactModal";
 import DashboardPage from "./pages/DashboardPage";
 import Frecuent from "./pages/FrecuentPage";
 import ContactPage from "./pages/ContactPage";
+import PrivateRoute from "./routers/PrivateRouter";
+import PublicRoute from "./routers/PublicRouter";
+import AuthContextProvider from "./context/AuthContext";
+import Logout from "./components/Logout";
 function App() {
     return (
-        <BrowserRouter>
-            <div className="App">
-                <Routes>
-                    <Route index element={<Login />} />
-                    <Route path="/dashboard" element={<DashboardPage />} />
-                    <Route path="/dashboard/contact/:id" element={<ContactPage/>} />
-                    <Route path="/dashboard/client/:id" element={<Client />} />
-                    <Route path="/dashboard/frecuent/:id" element={<Frecuent />} />
-                    <Route path="/contactModal" element={<ContactModal />} />
-                </Routes>
+        <AuthContextProvider>
+            <BrowserRouter>
+                <div className="App">
+                    <Routes>
+                        <Route path="/" element={<PublicRoute />}>
+                            <Route index element={<Login />} />
+                        </Route>
+                        <Route path="/dashboard" element={<PrivateRoute />}>
+                            <Route path="logout" element={<Logout/>}/>
+                            <Route index element={<DashboardPage />} />
+                            <Route path="contact/:id" element={<ContactPage />} />
+                            <Route path="client/:id" element={<Client />} />
+                            <Route path="frecuent/:id" element={<Frecuent />} />
+                            <Route path="contactModal" element={<ContactModal />} />
+                        </Route>
+                    </Routes>
 
-            </div>
-        </BrowserRouter>
+                </div>
+            </BrowserRouter >
+        </AuthContextProvider>
     );
 }
 
