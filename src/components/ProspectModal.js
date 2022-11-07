@@ -131,7 +131,7 @@ class ProspectModal extends React.Component {
                     Fecha de Contacto:
                   </span>
                   <input
-                    type="date"
+                    type="datetime-local"
                     className="form-control"
                     value={this.state.date}
                     onChange={(e) => this.setState({ date: e.target.value })}

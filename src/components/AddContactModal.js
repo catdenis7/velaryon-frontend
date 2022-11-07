@@ -47,7 +47,7 @@ class AddContactModal extends React.Component {
                         <div style={{ display: 'flex' }}>
                             <span style={{ fontWeight: "bold", marginRight: '20px' }}>Fecha de Contacto:</span>
                             <Form.Control
-                                type="date"
+                                type="datetime-local"
                                 value={this.state.date}
                                 onChange={e => this.setState({ date: e.target.value })}>
                             </Form.Control>
