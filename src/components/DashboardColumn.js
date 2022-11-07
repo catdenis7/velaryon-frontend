@@ -26,7 +26,7 @@ export default function(props) {
         <Card.Subtitle style={{ textAlign: 'center', background: '#bccac3', borderRadius: '25px' }}>
             <h4 style={{ fontWeight: 'bold', color: '#434846' }}>{props.name}</h4>
         </Card.Subtitle>
-        <Card.Body style={{ background: '#86a1ac', borderRadius: '0px 0px 25px 25px'}}>
+        <Card.Body style={{ background: '#86a1ac', borderRadius: '0px 0px 25px 25px', overflowY: "auto", maxHeight : "100vh" }}>
             {cards}
         </Card.Body>
     </Card>
