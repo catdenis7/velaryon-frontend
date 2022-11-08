@@ -18,7 +18,7 @@ export default function CardPersonalInformation({ personalInformation }) {
                 <div className="col-3">
                   <img
                     src={cardItem.profilePicture}
-                    alt="Patito Pic"
+                    alt="Profile Pic"
                     className="img-card"
                   />
                 </div>

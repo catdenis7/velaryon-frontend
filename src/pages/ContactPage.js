@@ -11,21 +11,24 @@ import ContactAccordionHeader from "../components/accordions/ContactAccordionHea
 import ContactAccordionBody from "../components/accordions/ContactAccordionBody";
 import { useParams } from "react-router-dom";
 
-let personalInformation = [
-  {
-    name: "Catherine",
-    lastName: "Gomez",
-    phoneNumber: "78945612",
-    email: "cat@gmail.com",
-    profilePicture:
-      "https://platform-lookaside.fbsbx.com/platform/profilepic/?psid=5367504253330521&width=1024&ext=1669488186&hash=AeTFJDupVu3NuKkmmjU",
-    url: "cat/facebook.com",
-  },
-];
+
+
 
 function ContactPage(props) {
+/*
+  constructor(props) {
+    super(props);
+    this.state = {
+        showModal: false,
+        modalClient: "",
+    }
+  },
 
-  
+  modalCallback = (data) => {
+    console.log("DATA CONTACT ==============>" + data);
+    this.setState({ showModal: !this.state.showModal, modalClient: data });
+}
+*/
   // constructor(props) {
   //     super(props);
   //     this.state = {

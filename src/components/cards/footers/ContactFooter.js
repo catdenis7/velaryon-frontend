@@ -1,15 +1,11 @@
-import { Button } from "bootstrap";
 import React from "react";
 import { Link } from "react-router-dom";
 import {
-    BsFillTelephoneFill,
-    BsLink45Deg,
     BsFillCalendarFill,
     BsPlusCircleFill,
 } from "react-icons/bs";
-import { HiMail } from "react-icons/hi";
 import { MdExposurePlus1 } from "react-icons/md";
-// import "../assets/css/cards.css";
+
 
 export default function (props) {
     let data = props.props;
@@ -28,6 +24,7 @@ export default function (props) {
                             Detalle
                         </button>
                     </Link>
+
                 </div>
                 <div style={{ marginLeft: 'auto', marginTop: 'auto' }}>
                     <BsPlusCircleFill size={35} color={"#406e73"} onClick={()=>{props.callback(data._id)}} />
