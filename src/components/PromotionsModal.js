@@ -1,3 +1,4 @@
+import ListGroup from 'react-bootstrap/ListGroup';
 import React, { useState, useRef, useEffect } from "react";
 import {
   Modal,
@@ -21,8 +22,38 @@ function PromotionModal({ show, handleClose }) {
     fromDate: "",
     toDate: "",
   });
+  const [file, setFile] = useState();
+  const [products, setProducts] = useState([
+    { _id: "443", description: "Test" },
+    { _id: "123", description: "Andoide" },
+    { _id: "333", description: "Tesisdhjt" }
+  ]);
+  const [selectedProducts, setSelectedProducts] = useState([]);
 
+  const [currentProduct, setCurrentProduct] = useState("")
   const inputFileRef = useRef();
+
+  useEffect(() => {
+    async function fetchData() {
+      let result = await promosViewModel.getProducts();
+      setProducts(result);
+    }
+    fetchData();
+  }, []);
+
+  const handleProductSelection = (event) => {
+    setCurrentProduct(event.target.value);
+  }
+
+  const handleProductSubmit = (event) => {
+    console.log(currentProduct);
+    console.log(selectedProducts);
+    let newProducts = selectedProducts;
+    newProducts.push(products.find(elem => elem._id === currentProduct));
+    console.log(newProducts);
+    setSelectedProducts(newProducts);
+    
+  }
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -35,7 +66,7 @@ function PromotionModal({ show, handleClose }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    promosViewModel.insert(data, file);
+    promosViewModel.insert(data, file, selectedProducts);
     // window.location.reload();
     handleClose();
   };
@@ -78,10 +109,23 @@ function PromotionModal({ show, handleClose }) {
                 </Form.Label>
                 <Row>
                   <Col>
-                    <PromosDropdown></PromosDropdown>
+                    <Form.Select onChange={handleProductSelection} value={currentProduct}>
+                      {
+                        products.map((item) => {
+                          return <option value={item._id}>{item.description}</option>
+                        })
+                      }
+                    </Form.Select>
+                    <Button onClick={handleProductSubmit}>Agregar</Button>
                   </Col>
                   <Col>
-                    <PromosList></PromosList>
+                    <ListGroup>
+                      {
+                        selectedProducts.map((item) => {
+                          return <ListGroup.Item>{item.description ?? "N/A"}</ListGroup.Item>
+                        })
+                      }
+                    </ListGroup>
                   </Col>
                 </Row>
               </FormGroup>
@@ -119,7 +163,7 @@ function PromotionModal({ show, handleClose }) {
               </FormGroup>
               <FormGroup>
                 <Form.Label className="labels">Imagen</Form.Label>
-                <Form.Control type="file" name="image" onChange={handleChange}></Form.Control>
+                <Form.Control type="file" name="image" onChange={handleFileChange}></Form.Control>
               </FormGroup>
             </Col>
           </Row>

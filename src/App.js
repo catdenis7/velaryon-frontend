@@ -13,6 +13,7 @@ import PublicRoute from "./routers/PublicRouter";
 import AuthContextProvider from "./context/AuthContext";
 import Logout from "./components/Logout";
 import PromotionsPage from "./pages/PromotionPage";
+import ProductSPage from "./pages/ProductsPage";
 function App() {
   return (
     <AuthContextProvider>
@@ -30,6 +31,7 @@ function App() {
               <Route path="frecuent/:id" element={<Frecuent />} />
               <Route path="contactModal" element={<ContactModal />} />
               <Route path="promotions" element={<PromotionsPage />} />
+              <Route path="products" element={<ProductSPage/>}></Route>
             </Route>
           </Routes>
         </div>

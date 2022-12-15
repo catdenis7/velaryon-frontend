@@ -21,7 +21,7 @@ class DashboardPage extends React.Component {
             showProspectModal: false,
             modalProspect: ""
         }
-        this.eventSource = new EventSource('http://localhost:5000/dashboard/notification');
+        this.eventSource = new EventSource('http://45.79.2.214:5000/dashboard/notification');
 
     }
 

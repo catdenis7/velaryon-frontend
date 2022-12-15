@@ -8,7 +8,7 @@ let prospectModalViewModel = {
         try {
             let result;
             // result.use(cors());
-            result = await axios.get("http://localhost:5000/contacts/methods");
+            result = await axios.get("http://45.79.2.214:5000/contacts/methods");
             console.log(result);
             return result.data;
         } catch (error) {
@@ -34,7 +34,7 @@ let prospectModalViewModel = {
             }
             let result;
             // result.use(cors());
-            result = await axios.post("http://localhost:5000/prospect/save",body);
+            result = await axios.post("http://45.79.2.214:5000/prospect/save",body);
             console.log(result);
             return result.data;
         } catch (error) {

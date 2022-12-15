@@ -11,7 +11,7 @@ let dashboardViewModel = {
     try {
       let result;
       // result.use(cors());
-      result = await axios.get("http://localhost:5000/clients/cards");
+      result = await axios.get("http://45.79.2.214:5000/clients/cards");
       console.log(result);
       return result.data;
     } catch (error) {

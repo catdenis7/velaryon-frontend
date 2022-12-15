@@ -48,7 +48,7 @@ function PromotionsPage() {
               <Col>
                 <span>Imagen: </span>
                 <br></br>
-                <img src={accordion.image}></img>
+                <img src={'https://renatoalvarezdev.com/media/'+ accordion.image}></img>
               </Col>
             </Row>
           </Accordion.Body>

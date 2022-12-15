@@ -7,7 +7,7 @@ let clientPageViewModel = {
         try {
             let result;
             // result.use(cors());
-            result = await axios.post("http://localhost:5000/clients/orders", {
+            result = await axios.post("http://45.79.2.214:5000/clients/orders", {
                 "clientId": clientId
             });
             console.log(result);
@@ -20,7 +20,7 @@ let clientPageViewModel = {
     async getPersonalData(clientId) {
         try {
             let result;
-            result = await axios.post("http://localhost:5000/clients/personal_data", {
+            result = await axios.post("http://45.79.2.214:5000/clients/personal_data", {
                 "clientId": clientId
             });
             console.log(result);

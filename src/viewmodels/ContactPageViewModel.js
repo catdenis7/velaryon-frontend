@@ -4,7 +4,7 @@ let contactPageViewModel = {
     async find(clientId) {
         try {
             let result;
-            result = await axios.post("http://localhost:5000/clients/contacts", {
+            result = await axios.post("http://45.79.2.214:5000/clients/contacts", {
                 "clientId": clientId 
             });
             console.log(result);

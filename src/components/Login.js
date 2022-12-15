@@ -17,7 +17,7 @@ export default function(props) {
     const loginMethod = async function (){
         console.log('loggin: ',username )
         try {
-        let result = await axios.post("http://localhost:5000/login", {
+        let result = await axios.post("http://45.79.2.214:5000/login", {
             userName: username,
             password: password
         }, {
