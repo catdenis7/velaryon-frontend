@@ -48,7 +48,7 @@ function PromotionsPage() {
               <Col>
                 <span>Imagen: </span>
                 <br></br>
-                {accordion.image}
+                <img src={accordion.image}></img>
               </Col>
             </Row>
           </Accordion.Body>

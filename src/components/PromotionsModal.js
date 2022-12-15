@@ -10,6 +10,9 @@ import {
 } from "react-bootstrap";
 import "../assets/css/promotion.css";
 import promosViewModel from "../viewmodels/PromosViewModel";
+import PromosDropdown from "./PromosDropdown";
+import PromosList from "./PromosList";
+import Dropdown from 'react-bootstrap/Dropdown';
 function PromotionModal({ show, handleClose }) {
   const [data, setData] = useState({
     discount: "",
@@ -17,10 +20,8 @@ function PromotionModal({ show, handleClose }) {
     description: "",
     fromDate: "",
     toDate: "",
-    image: ""
+    image: "",
   });
-
-  const inputFileRef = useRef();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -66,6 +67,19 @@ function PromotionModal({ show, handleClose }) {
                   onChange={handleChange}
                 ></Form.Control>
               </FormGroup>
+              <FormGroup>
+                <Form.Label className="labels">
+                  Seleccione los productos
+                </Form.Label>
+                <Row>
+                  <Col>
+                    <PromosDropdown></PromosDropdown>
+                  </Col>
+                  <Col>
+                    <PromosList></PromosList>
+                  </Col>
+                </Row>
+              </FormGroup>
             </Col>
             <Col lg={6}>
               <FormGroup>
@@ -100,7 +114,11 @@ function PromotionModal({ show, handleClose }) {
               </FormGroup>
               <FormGroup>
                 <Form.Label className="labels">Imagen</Form.Label>
-                <Form.Control type="file" name="image" onChange={handleChange}></Form.Control>
+                <Form.Control
+                  type="file"
+                  name="image"
+                  onChange={handleChange}
+                ></Form.Control>
               </FormGroup>
             </Col>
           </Row>

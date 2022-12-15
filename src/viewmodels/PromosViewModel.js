@@ -27,7 +27,18 @@ let promosViewModel = {
     } catch(error) {
       return [];
     }
+  },
+
+  async get() {
+    try {
+      let result;
+      result = await axios.get("http://localhost:5000/products");
+      return result.data;
+    } catch (error) {
+      return [];
+    }
   }
+
 };
 
 export default promosViewModel;
