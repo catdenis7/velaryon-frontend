@@ -15,35 +15,6 @@ import { useParams } from "react-router-dom";
 
 
 function ContactPage(props) {
-/*
-  constructor(props) {
-    super(props);
-    this.state = {
-        showModal: false,
-        modalClient: "",
-    }
-  },
-
-  modalCallback = (data) => {
-    console.log("DATA CONTACT ==============>" + data);
-    this.setState({ showModal: !this.state.showModal, modalClient: data });
-}
-*/
-  // constructor(props) {
-  //     super(props);
-  //     this.state = {
-  //         accordionItems: [],
-  //     };
-  // }
-  //
-  // async componentDidMount() {
-  //     let result = await contactPageViewModel.find();
-  //     console.log(result);
-  //     // this.setState(result); // FUNCIONA IGUAL
-  //     this.setState({
-  //         accordionItems: result,
-  //     });
-  // }
 
   const [accordionItems, setAccordionItems] = useState([]);
   const [personalInformation, setPersonalInformation] = useState([]);
@@ -59,20 +30,6 @@ function ContactPage(props) {
     }
     fetchData();
   }, []);
-
-  //   let accordions = accordionItems.map((accordion, index) => {
-  //       return (<Accordion.Item eventKey={index}>
-  //           <Accordion.Header>
-  //               <ContactAccordionHeader data={accordion ?? []} index={index}>
-  //               </ContactAccordionHeader>
-  //           </Accordion.Header>
-  //           <Accordion.Body>
-  //               <ContactAccordionBody props={accordion ?? []}>
-  //               </ContactAccordionBody>
-  //           </Accordion.Body>
-  //       </Accordion.Item>
-  //       );
-  //   });
 
   let accordions = accordionItems.map((accordion, index) => {
     return (

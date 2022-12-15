@@ -3,7 +3,7 @@ import { BsFillHouseFill } from "react-icons/bs";
 import { TbVinyl } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import "../assets/css/sidebar.css";
-import { FaSignOutAlt } from "react-icons/fa";
+import { FaSignOutAlt, FaPercent } from "react-icons/fa";
 
 export default function ({ children }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,15 +15,15 @@ export default function ({ children }) {
       name: "Home",
       icon: <BsFillHouseFill />,
     },
-    // {
-    //   path: "/Login",
-    //   name: "Login",
-    //   icon: <BsFillPersonFill />,
-    // },
     {
       path: "/dashboard/logout",
       name: "Logout",
       icon: <FaSignOutAlt />
+    },
+    {
+      path: "/dashboard/promotions",
+      name: "Promos",
+      icon: <FaPercent />
     }
   ];
   return (

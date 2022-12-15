@@ -16,6 +16,7 @@ export default function(props) {
 
     const loginMethod = async function (){
         console.log('loggin: ',username )
+        try {
         let result = await axios.post("http://localhost:5000/login", {
             userName: username,
             password: password
@@ -23,6 +24,9 @@ export default function(props) {
             withCredentials: true
         });
         login(result.data.userName, result.data.id);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     return (
