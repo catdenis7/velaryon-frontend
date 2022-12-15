@@ -20,17 +20,22 @@ function PromotionModal({ show, handleClose }) {
     description: "",
     fromDate: "",
     toDate: "",
-    image: "",
   });
+
+  const inputFileRef = useRef();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setData({ ...data, [name]: value });
   };
 
+  const handleFileChange = (event) => {
+    setFile(event.target.files[0]);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    promosViewModel.insert(data);
+    promosViewModel.insert(data, file);
     // window.location.reload();
     handleClose();
   };
@@ -114,11 +119,7 @@ function PromotionModal({ show, handleClose }) {
               </FormGroup>
               <FormGroup>
                 <Form.Label className="labels">Imagen</Form.Label>
-                <Form.Control
-                  type="file"
-                  name="image"
-                  onChange={handleChange}
-                ></Form.Control>
+                <Form.Control type="file" name="image" onChange={handleChange}></Form.Control>
               </FormGroup>
             </Col>
           </Row>
